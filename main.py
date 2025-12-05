@@ -763,7 +763,7 @@ class ExpenseDB:
 def parse_sms_message(text: str) -> Optional[ParsedSMS]:
     pattern = re.compile(
         r"Transaction from (\d{4}) on (\d{2}/\d{2}/\d{2}) at (\d{2}:\d{2}:\d{2}) "
-        r"for (MVR|MYR)(\d+(?:\.\d+)?) at (.+?) was processed",
+        r"for (MVR|MYR|USD|EUR|GBP|INR)(\d+(?:\.\d+)?) at (.+?) was processed",
         re.IGNORECASE,
     )
     m = pattern.search(text)
